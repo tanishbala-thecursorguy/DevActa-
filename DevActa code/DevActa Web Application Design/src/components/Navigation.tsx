@@ -1,7 +1,7 @@
 import { Button } from "./ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "./ui/dropdown-menu";
-import { User, Settings, LogOut } from "lucide-react";
+import { User, Settings, LogOut, Map } from "lucide-react";
 import { currentUser } from "../data/mockData";
 import logoImage from "figma:asset/32a9f97ebfa773dabe97368d7e406f5ed1e26205.png";
 
@@ -15,6 +15,7 @@ export function Navigation({ currentPage, onPageChange }: NavigationProps) {
     { id: "feed", label: "Explore" },
     { id: "leaderboard", label: "Leaderboard" },
     { id: "games", label: "Games" },
+    { id: "map", label: "Map", icon: Map },
     { id: "hackathons", label: "Hackathons" },
     { id: "challenges", label: "Challenges" },
     { id: "hiring", label: "Hire Talent" },

@@ -12,6 +12,7 @@ import { ChallengesPage } from "./components/ChallengesPage";
 import { ProfilePage } from "./components/ProfilePage";
 import { HiringPage } from "./components/HiringPage";
 import { SettingsPage } from "./components/SettingsPage";
+import { MapPage } from "./components/MapPage";
 import { RetroGameInterface } from "./components/RetroGameInterface";
 
 function AppContent() {
@@ -79,6 +80,8 @@ function AppContent() {
         return <FeedPage onPageChange={handlePageChange} />;
       case "leaderboard":
         return <LeaderboardPage />;
+      case "map":
+        return <MapPage />;
       case "hackathons":
         return <HackathonsPage />;
       case "challenges":
@@ -106,8 +109,8 @@ function AppContent() {
   return (
     <ThemeProvider>
       <div className="min-h-screen bg-background">
-        {/* Only show navigation when not in retro interface */}
-        {gameState === 'games' && (
+        {/* Show navigation when not in retro interface */}
+        {!(currentPage === 'games' && gameState === 'retro-interface') && (
           <Navigation currentPage={currentPage} onPageChange={handlePageChange} />
         )}
         {renderPage()}
